@@ -1,4 +1,4 @@
-This is the narrative for my text based game.
+Narrative for text adventure game.
 
 Built in Python (maybe with GUI) using OOP principles
 
@@ -10,7 +10,7 @@ https://opensource.com/resources/python/gui-frameworks -->
 ** Fill in the blanks later with choices as needed. This is just the overall story arch.**
 
 Items--
-Water bottle, map, seven day supply of food rations, rope, flashlight, 
+Water bottle, map, seven day supply of food rations, rope, flashlight,
 
 
 Goal of the game--
