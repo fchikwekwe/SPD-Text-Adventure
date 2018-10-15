@@ -9,3 +9,14 @@ Add SQL lite database to store saves
 Add tKinter GUI so game is playable outside of command line
 Deploy to Heroku (or another similar site?) so game is playable remotely
 Maybe post game on itch.io
+
+
+---------------
+
+Pseudocode
+# get player input for choice
+# make sure that input is valid
+# use input to determine what the next encounter in the game will be
+# record player choices in a list
+# show them their choices at the end of the game
+# allow player to be able to replay the game
