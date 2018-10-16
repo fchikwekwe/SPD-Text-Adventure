@@ -12,6 +12,8 @@ class Game:
     def __init__(self):
         """eventually this list will store player choices and show them to the player at the end of the game"""
         self.choices = []
+        option_1 = print("Please enter an option")
+        option_2 = print("Please enter an option")
 
     def add_choice(self):
         """this method will add player choices to the self.choices list so that they can see them at the end of the game"""
@@ -109,13 +111,25 @@ class Game:
         let_them_knock.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        let_them_knock.choice("", option_1, option_2)
+        let_them_knock.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", self.check_supplies, self.check_space)
 
     def check_whos_there(self):
         check_whos_there.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        check_whos_there.choice("", option_1, option_2)
+        check_whos_there.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", self.check_supplies, self.check_space)
+
+    def check_supplies(self):
+        check_supplies.encounter_text()
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
+        self.clear()
+        check_supplies.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", option_1, option_2)
+
+    def check_space(self):
+        check_space.encounter_text()
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
+        self.clear()
+        check_space.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", option_1, option_2)
 
 if __name__ == "__main__":
     # instatiate objects
@@ -126,6 +140,8 @@ if __name__ == "__main__":
     scold_omar = Scold_Omar()
     let_them_knock = Let_Them_Knock()
     check_whos_there = Check_Whos_There()
+    check_supplies = Check_Supplies()
+    check_space = Check_Space()
 
     # time to play
     game = Game()
