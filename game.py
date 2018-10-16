@@ -4,7 +4,7 @@ from os import system, name
 
 from character import Character
 from encounter import *
-from item import Item
+# from item import Item
 
 """main class"""
 
@@ -59,7 +59,7 @@ class Game:
     # trying to see if there is a better way to organize this code than to have seperate functions for each encounter
     # problem with this method is that I would have to call two functions within another function call
     # unfortunately, this does not simplify things; might come back to it if I think of something
-    
+
     # def encounter_room(self, encounter_name, choice_text, choice_one, choice_two):
     #     encounter.encounter_text()
     #     input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
