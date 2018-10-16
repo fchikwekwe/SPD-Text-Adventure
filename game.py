@@ -12,9 +12,7 @@ class Game:
     def __init__(self):
         """eventually this list will store player choices and show them to the player at the end of the game"""
         self.choices = []
-        option_1 = print("Please enter an option")
-        option_2 = print("Please enter an option")
-
+        
     def add_choice(self):
         """this method will add player choices to the self.choices list so that they can see them at the end of the game"""
 
@@ -121,15 +119,15 @@ class Game:
 
     def check_supplies(self):
         check_supplies.encounter_text()
-        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
+        input(colored("End of Chapter One. Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        check_supplies.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", option_1, option_2)
+        check_supplies.choice("nothing yet", self.option_1, self.option_2)
 
     def check_space(self):
         check_space.encounter_text()
-        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
+        input(colored("End of Chapter One. Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        check_space.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", option_1, option_2)
+        check_space.choice("nothing yet", self.option_1, self.option_2)
 
 if __name__ == "__main__":
     # instatiate objects
