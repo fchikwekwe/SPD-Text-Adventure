@@ -9,6 +9,17 @@ https://opensource.com/resources/python/gui-frameworks -->
 
 ** Fill in the blanks later with choices as needed. This is just the overall story arch.**
 
+1) Room scene with Omar
+2) Sisters wake up
+3) Bombing subsides and you venture out into the fray
+4) You meet Abi, the
+5) You meet Christopher, the foreign volunteer worker who has lost touch with his headquarters
+6) You meet Tania, the elderly, homeless woman who is nearly senile
+7)
+8)
+9)
+10)
+
 Items--
 Water bottle, map, seven day supply of food rations, rope, flashlight,
 
