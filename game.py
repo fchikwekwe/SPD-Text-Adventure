@@ -1,4 +1,5 @@
 import time
+from termcolor import colored
 
 from character import Character
 from encounter import *
@@ -35,7 +36,7 @@ class Game:
     def play(self):
         # intro text shows; instructions show
         self.intro()
-        input("Press enter to continue...")
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         # start the game
         self.intro_room()
 
@@ -44,17 +45,29 @@ class Game:
         # first room text showss
         intro_room.encounter_text()
         # allow time for user to read text
-        input("Press enter to continue...")
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         intro_room.choice("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", self.bother_omar, self.leave_omar_alone)
 
     def bother_omar(self):
         bother_omar.encounter_text()
         # allow time for user to read text
-        input("Press enter to continue...")
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         bother_omar.choice("a) Make a joking comment b) Scold your brother for staying awake all night again", self.joke_with_omar, self.scold_omar)
 
     def leave_omar_alone(self):
-        pass
+        leave_omar_alone.encounter_text()
+        input(colored("Press enter to continue...", "blue", attrs=["bold"]))
+        leave_omar_alone.choice("a) Make a joking comment b) Scold your brother for staying awake all night again", self.joke_with_omar, self.scold_omar)
+
+    def joke_with_omar(self):
+        joke_with_omar.encounter_text()
+        input(colored("Press enter to continue...", "blue", attrs=["bold"]))
+        joke_with_omar.choice("", option_1, option_2)
+
+    def scold_omar(self):
+        scold_omar.encounter_text()
+        input(colored("Press enter to continue...", "blue", attrs=["bold"]))
+        scold_omar.choice("", option_1, option_2)
 
 
 if __name__ == "__main__":
@@ -62,6 +75,8 @@ if __name__ == "__main__":
     intro_room = Intro_Room()
     bother_omar = Bother_Omar()
     leave_omar_alone = Leave_Omar_Alone()
+    joke_with_omar = Joke_With_Omar()
+    scold_omar = Scold_Omar()
 
     game = Game()
     game.play()
