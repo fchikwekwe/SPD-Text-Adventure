@@ -9,7 +9,7 @@ https://opensource.com/resources/python/gui-frameworks -->
 
 ** Fill in the blanks later with choices as needed. This is just the overall story arch.**
 
-1) Room scene with Omar
+1) Room scene with Omar (7 possible encounters)
 2) Sisters wake up
 3) Bombing subsides and you venture out into the fray
 4) You meet Abi, the
@@ -18,7 +18,7 @@ https://opensource.com/resources/python/gui-frameworks -->
 7) You meet Eli,
 8) You meet Tabitha,
 9) You meet Ram,
---Maybe have an optional area where the player can go back and choose a person if they haven't taken up all of the spots in their vehicle already. 
+--Maybe have an optional area where the player can go back and choose a person if they haven't taken up all of the spots in their vehicle already.
 10) You leave the area with those whom you have chosen.
 
 Items--
