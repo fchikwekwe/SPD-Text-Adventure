@@ -72,14 +72,19 @@ class Game:
         joke_with_omar.encounter_text()
         self.clear()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
-        joke_with_omar.choice("", option_1, option_2)
+        joke_with_omar.choice("A loud persistent knock on the door interrupts your conversation.\n You hear Alia sit-up. Raya rolls over and lets out a little moan. \n", self.let_them_knock, self.check_whos_there)
 
     def scold_omar(self):
         scold_omar.encounter_text()
         self.clear()
         input(colored("Press enter to continue...", "blue", attrs=["bold"]))
-        scold_omar.choice("", option_1, option_2)
+        scold_omar.choice("A loud persistent knock on the door interrupts your conversation.\n You hear Alia sit-up. Raya rolls over and lets out a little moan. \n", self.let_them_knock, self.check_whos_there)
 
+    def let_them_knock(self):
+        pass
+
+    def check_whos_there(self):
+        pass
 
 if __name__ == "__main__":
     # instatiate objects

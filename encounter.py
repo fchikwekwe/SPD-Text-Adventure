@@ -44,3 +44,11 @@ class Joke_With_Omar(Encounter):
 class Scold_Omar(Encounter):
     def encounter_text(self):
         print("\nYour brow furrows as you lean forward.\n'Omar, it's so hard to look after you when your refuse to listen to me.'\n \nRegret washes over you as the words leave your lips. Your brother tenses as he rises and stalks across the room.\n'Then don't worry about me,' he quips, 'we might all be dead soon anyway.'\n \nHis boxy frame is imposing as he pulls his backpack over his left shoulder.\n'Brother, how can I let you leave without worrying?,' glancing at your sisters, you continue, 'The three of you are all that I have.'\n")
+
+class Let_Them_Knock(Encounter):
+    def encounter_text(self):
+        print("\n something...")
+
+class Check_Whos_There(Encounter):
+    def encounter_text(self):
+        print("\n something...")
