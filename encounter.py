@@ -1,5 +1,4 @@
-import time
-
+# import time
 
 """class for creating each encounter within the game"""
 
@@ -40,8 +39,8 @@ class Leave_Omar_Alone(Encounter):
 
 class Joke_With_Omar(Encounter):
     def encounter_text(self):
-        print("\nYou know, you could probably bang a pot right next to their heads, and they'd still sleep until the sun came up.\nYou see his guard loosen a bit as he lets out a quiet scoff and smiles slightly.\n'I don't think they'd appreciate it if we tested that out,' he says turning to the kitchen to grab his bag.\n'Don't leave yet,' you say, 'Let's wait at least until this round of bombs have moved on'\n Another distant blast sounds, followed by one that sounds a little closer. \n'Sounds far enough away to me.'\nHe's cold again. Distancing himself from you.\n")
+        print("\n'You know, you could probably bang a pot right next to their heads, and they'd still sleep until the sun came up.'\n \nYou see his guard loosen a bit as he lets out a quiet scoff and smiles slightly.\n'I don't think they'd appreciate it if we tested that out,' he says turning to the kitchen to grab his bag.\n \n'Don't leave yet,' you say, 'Let's wait at least until this round have moved on'\n Another distant blast sounds, followed by one that sounds a little closer. \n'We still have the same needs. Whether they're here or not.'\nHe's cold again. Distancing himself from you.\n'We still have enough food for two more days, let's wait a few hours and see'\n")
 
 class Scold_Omar(Encounter):
     def encounter_text(self):
-        print("\nYour brow furrows as your lean forward.\n'Omar, it's so hard to look after you when your refuse to listen to me.'\nRegret washes over you as the words leave your lips. Your brother tenses across the  '")
+        print("\nYour brow furrows as you lean forward.\n'Omar, it's so hard to look after you when your refuse to listen to me.'\n \nRegret washes over you as the words leave your lips. Your brother tenses as he rises and stalks across the room.\n'Then don't worry about me,' he quips, 'we might all be dead soon anyway.'\n \nHis boxy frame is imposing as he pulls his backpack over his left shoulder.\n'Brother, how can I let you leave without worrying?,' glancing at your sisters, you continue, 'The three of you are all that I have.'\n")

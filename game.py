@@ -1,5 +1,6 @@
 import time
 from termcolor import colored
+from os import system, name
 
 from character import Character
 from encounter import *
@@ -33,39 +34,49 @@ class Game:
     #         # may want to try and change this later so it works with any keyboard input
     #         print(" ")
 
+    def clear(self):
+    if name == 'nt':
+        _=system('cls')
+    else:
+        _=system('clear')
+
     def play(self):
         # intro text shows; instructions show
         self.intro()
+        self.clear()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         # start the game
         self.intro_room()
 
 
     def intro_room(self):
-        # first room text showss
+        # first room text shows
         intro_room.encounter_text()
-        # allow time for user to read text
+        self.clear()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         intro_room.choice("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", self.bother_omar, self.leave_omar_alone)
 
     def bother_omar(self):
         bother_omar.encounter_text()
-        # allow time for user to read text
+        self.clear()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         bother_omar.choice("a) Make a joking comment b) Scold your brother for staying awake all night again", self.joke_with_omar, self.scold_omar)
 
     def leave_omar_alone(self):
         leave_omar_alone.encounter_text()
-        input(colored("Press enter to continue...", "blue", attrs=["bold"]))
+        self.clear()
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         leave_omar_alone.choice("a) Make a joking comment b) Scold your brother for staying awake all night again", self.joke_with_omar, self.scold_omar)
 
     def joke_with_omar(self):
         joke_with_omar.encounter_text()
-        input(colored("Press enter to continue...", "blue", attrs=["bold"]))
+        self.clear()
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         joke_with_omar.choice("", option_1, option_2)
 
     def scold_omar(self):
         scold_omar.encounter_text()
+        self.clear()
         input(colored("Press enter to continue...", "blue", attrs=["bold"]))
         scold_omar.choice("", option_1, option_2)
 
@@ -78,5 +89,6 @@ if __name__ == "__main__":
     joke_with_omar = Joke_With_Omar()
     scold_omar = Scold_Omar()
 
+    # time to play
     game = Game()
     game.play()
