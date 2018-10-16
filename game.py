@@ -95,14 +95,14 @@ class Game:
         joke_with_omar.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        joke_with_omar.choice("A loud persistent knock on the door interrupts your conversation.\n You hear Alia sit-up. Raya rolls over and lets out a little moan. \n", self.let_them_knock, self.check_whos_there)
+        joke_with_omar.choice("A loud persistent knock on the door interrupts your conversation.\nYou hear Alia sit-up. Raya rolls over and lets out a little moan. \na) Let them knock for a bit longer b) Go over to the door and find out who it is.", self.let_them_knock, self.check_whos_there)
 
     def scold_omar(self):
         # your frustration spills over a bit; Omar recedes from you
         scold_omar.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        scold_omar.choice("A loud persistent knock on the door interrupts your conversation.\nYou hear Alia sit-up. Raya rolls over and lets out a little moan. \na) Let the knock for a bit longer b) Go over to the door and find out who it is.", self.let_them_knock, self.check_whos_there)
+        scold_omar.choice("A loud persistent knock on the door interrupts your conversation.\nYou hear Alia sit-up. Raya rolls over and lets out a little moan. \na) Let them knock for a bit longer b) Go over to the door and find out who it is.", self.let_them_knock, self.check_whos_there)
 
     def let_them_knock(self):
         # someone is knocking; maybe they'll go away
@@ -112,8 +112,10 @@ class Game:
         let_them_knock.choice("", option_1, option_2)
 
     def check_whos_there(self):
-        # I'm curious enough to try and check who it is
-        pass
+        check_whos_there.encounter_text()
+        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
+        self.clear()
+        check_whos_there.choice("", option_1, option_2)
 
 if __name__ == "__main__":
     # instatiate objects
@@ -122,6 +124,8 @@ if __name__ == "__main__":
     leave_omar_alone = Leave_Omar_Alone()
     joke_with_omar = Joke_With_Omar()
     scold_omar = Scold_Omar()
+    let_them_knock = Let_Them_Knock()
+    check_whos_there = Check_Whos_There()
 
     # time to play
     game = Game()
