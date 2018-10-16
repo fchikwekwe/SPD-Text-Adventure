@@ -5,6 +5,7 @@ write full narrative
 Separate narrative passages into encounters
 Item inventory system
 CRUD player character
+CRUD list for holding 
 Add SQL lite database to store saves
 Add tKinter GUI so game is playable outside of command line
 Deploy to Heroku (or another similar site?) so game is playable remotely

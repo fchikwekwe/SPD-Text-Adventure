@@ -8,7 +8,10 @@ from item import Item
 
 class Game:
     def __init__(self):
-        self.bother_omar =
+        self.choices = []
+
+    def add.choice(self):
+        
 
     def intro(self):
         """this is where the game instructions will show and backstory"""
@@ -25,29 +28,28 @@ class Game:
             # may want to try and change this later so it works with any keyboard input
             print(" ")
 
-    def bother_omar(self):
-        print("\nYou push yourself off the couch and almost silently slip across the room. \n \nNot silently enough. Omar turns his head to the side and looks at you out of the side of his eye. ")
-
-    def leave_omar_alone(self):
-        print("\nOther things...")
-
     def play(self):
+        # declare objects
+        intro_room = Intro_Room()
+        bother_omar = Bother_Omar()
+        leave_omar_alone = Leave_Omar_Alone()
+
         # intro text shows; instructions show
         self.intro()
         self.time_lapse()
-        # first room text shows
-        print("It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
+        self.intro_room()
+
+    def intro_room(self):
+        # first room text showss
+        intro_room.encounter_text()
         # allow time for user to read text
         self.time_lapse()
-        choosing = True
-        while choosing:
-            intro_room = input("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.")
-            if intro_room.lower() == "a":
-                self.bother_omar
-            elif intro_room.lower() == "b":
-                self.leave_omar_alone
-            else:
-                pass
+        intro_room.choice("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", bother_omar.encounter_text, leave_omar_alone.encounter_text)
+
+    def bother_omar(self):
+        # allow time for user to read text
+        self.time_lapse()
+        bother_omar.choice("", option_1, option_2)
 
 
 
