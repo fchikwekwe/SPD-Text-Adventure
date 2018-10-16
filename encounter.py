@@ -8,6 +8,7 @@ class Encounter:
         pass
 
     def encounter_text(self):
+        # check to make sure that we have encounter text
         raise notImplementedError()
 
     def choice(self, choice_input, option_1, option_2):
@@ -56,6 +57,6 @@ class Let_Them_Knock(Encounter):
         print("\n something...")
 
 class Check_Whos_There(Encounter):
-    # I'm curious enough to try and check who it is 
+    # I'm curious enough to try and check who it is
     def encounter_text(self):
         print("\n something...")

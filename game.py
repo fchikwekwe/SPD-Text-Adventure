@@ -35,12 +35,17 @@ class Game:
     #         print(" ")
 
     def clear(self):
+        # this method clears the console; will use after each input
         if name == 'nt':
             _=system('cls')
         else:
             _=system('clear')
 
     def play(self):
+        """
+        Once base game is written, I need to go back here and add a game loop
+        that shows player their choices so far and asks them if they would like to play again
+        """
         self.clear()
         # intro text shows; instructions show
         self.intro()
@@ -50,9 +55,11 @@ class Game:
         self.intro_room()
         # self.encounter_room(intro_room, "a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", self.bother_omar, self.leave_omar_alone)
 
+
     # trying to see if there is a better way to organize this code than to have seperate functions for each encounter
     # problem with this method is that I would have to call two functions within another function call
     # unfortunately, this does not simplify things; might come back to it if I think of something
+    
     # def encounter_room(self, encounter_name, choice_text, choice_one, choice_two):
     #     encounter.encounter_text()
     #     input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
@@ -60,43 +67,52 @@ class Game:
     #     encounter.choice(choice_text, choice_one, choice_two)
 
     def intro_room(self):
-        # first room text shows
+        # first room of the game; waking up
         intro_room.encounter_text()
+        # using another text color so that this catches the user's eye
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
+        # clear the console after input
         self.clear()
+        # first choice of the game
         intro_room.choice("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", self.bother_omar, self.leave_omar_alone)
 
     def bother_omar(self):
+        # you decide to walk over to Omar
         bother_omar.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
         bother_omar.choice("a) Make a joking comment b) Scold your brother for staying awake all night again", self.joke_with_omar, self.scold_omar)
 
     def leave_omar_alone(self):
+        # you enjoy the silence and observe your brother for a bit
         leave_omar_alone.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
         leave_omar_alone.choice("a) Make a joking comment b) Scold your brother for staying awake all night again", self.joke_with_omar, self.scold_omar)
 
     def joke_with_omar(self):
+        # you try to make things light; Omar smiles
         joke_with_omar.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
         joke_with_omar.choice("A loud persistent knock on the door interrupts your conversation.\n You hear Alia sit-up. Raya rolls over and lets out a little moan. \n", self.let_them_knock, self.check_whos_there)
 
     def scold_omar(self):
+        # your frustration spills over a bit; Omar recedes from you
         scold_omar.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
         scold_omar.choice("A loud persistent knock on the door interrupts your conversation.\nYou hear Alia sit-up. Raya rolls over and lets out a little moan. \na) Let the knock for a bit longer b) Go over to the door and find out who it is.", self.let_them_knock, self.check_whos_there)
 
     def let_them_knock(self):
+        # someone is knocking; maybe they'll go away
         let_them_knock.encounter_text()
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
         let_them_knock.choice("", option_1, option_2)
 
     def check_whos_there(self):
+        # I'm curious enough to try and check who it is
         pass
 
 if __name__ == "__main__":
