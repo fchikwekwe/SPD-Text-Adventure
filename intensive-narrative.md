@@ -15,10 +15,11 @@ https://opensource.com/resources/python/gui-frameworks -->
 4) You meet Abi, the
 5) You meet Christopher, the foreign volunteer worker who has lost touch with his headquarters
 6) You meet Tania, the elderly, homeless woman who is nearly senile
-7)
-8)
-9)
-10)
+7) You meet Eli,
+8) You meet Tabitha,
+9) You meet Ram,
+--Maybe have an optional area where the player can go back and choose a person if they haven't taken up all of the spots in their vehicle already. 
+10) You leave the area with those whom you have chosen.
 
 Items--
 Water bottle, map, seven day supply of food rations, rope, flashlight,
