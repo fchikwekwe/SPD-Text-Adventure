@@ -22,6 +22,7 @@ v3---------------
 
 Pseudocode
 
+# when a player makes a choice, update choice object
+## choice attributes: name, recap description, effects
+# add choice object to character
 # record player choices in a list
-# show them their choices at the end of the game
-# allow player to be able to replay the game
