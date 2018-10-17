@@ -43,9 +43,7 @@ class Encounter:
     #             choosing = False
     #         else:
     #             pass
-
-    # def log_choice(self, character.choices):
-#
+# 
 # class Intro_Room(Encounter):
 #     # first room of the game; waking up
 #     def encounter_text(self):
