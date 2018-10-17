@@ -3,6 +3,7 @@
 .DS_Store
 /_pycache_
 /__pycache__
+/.git
 
 # my files
 
