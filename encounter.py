@@ -25,11 +25,11 @@ class Encounter:
                 text_index = self.encounter_text.index(text)
                 print(self.encounter_text[text_index])
 
-    def encounter_text(self):
-        # check to make sure that we have encounter text
-        raise notImplementedError()
-
-    # def choice(self, choice_input, option_1, option_2):
+    # def encounter_text(self):
+    #     # check to make sure that we have encounter text
+    #     raise notImplementedError()
+    #
+    # # def choice(self, choice_input, option_1, option_2):
     #     """ this method will hold code that tracks when the player has made a choice """
     #     choosing = True
     #     while choosing:
@@ -43,7 +43,7 @@ class Encounter:
     #             choosing = False
     #         else:
     #             pass
-# 
+#
 # class Intro_Room(Encounter):
 #     # first room of the game; waking up
 #     def encounter_text(self):

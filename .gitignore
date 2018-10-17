@@ -2,7 +2,7 @@
 
 .DS_Store
 /_pycache_
-/--pycache--
+/__pycache__
 
 # my files
 

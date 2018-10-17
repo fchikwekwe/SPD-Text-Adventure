@@ -1,11 +1,11 @@
 Text adventure game
 
 
-write full narrative
+[DONE; ended up just doing chapter 1]write full narrative
 [DONE]Separate narrative passages into encounters
 v0---------------
 
-Item inventory system
+// not doing // Item inventory system
 CRUD player character
 CRUD list for holding
 v1---------------
@@ -26,3 +26,9 @@ Pseudocode
 ## choice attributes: name, recap description, effects
 # add choice object to character
 # record player choices in a list
+
+
+<!-- ** notes on potential GUI frameworks to use
+https://opensource.com/resources/python/gui-frameworks -->
+
+<!-- Check out tKinter by example -->
