@@ -39,7 +39,9 @@ class Main(tk.Tk):
             text_index += 1
 
     def add_text(self):
-        
+
+    def remove_text(self):
+
 
         if __name__ == '__main__':
             game = Main()
