@@ -11,13 +11,7 @@ from encounter import Encounter
 
 class Game(tk.Tk):
     def __init__(self, choices=None):
-        super().__init__()
-
-        self.title("Seven Seats")
-        self.geometry("640x640")
-
         self.choices = []
-
         # self.bind("<Return>"
 
     def add_choice(self, encounter_name):
@@ -203,5 +197,5 @@ if __name__ == "__main__":
 
     # time to play
     game = Game()
-    game.mainloop()
+    # game.mainloop()
     game.play()
