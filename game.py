@@ -1,21 +1,29 @@
-import time
+# import time
 from termcolor import colored
 from os import system, name
+import tkinter as tk
 
 from character import Character
-from encounter import *
+from encounter import Encounter
 # from item import Item
 
 """main class"""
 
+class Game(tk.Tk):
+    def __init__(self, choices=None):
+        super().__init__()
 
-class Game:
-    def __init__(self):
-        """eventually this list will store player choices and show them to the player at the end of the game"""
+        self.title("Seven Seats")
+        self.geometry("640x640")
+
         self.choices = []
 
-    def add_choice(self):
+        # self.bind("<Return>"
+
+    def add_choice(self, encounter_name):
         """this method will add player choices to the self.choices list so that they can see them at the end of the game"""
+        print(encounter_name.name)
+        self.choices.append(encounter_name.name)
 
     def intro(self):
         """this is where the game instructions will show and backstory"""
@@ -88,7 +96,8 @@ class Game:
 
     def intro_room(self):
         # first room of the game; waking up
-        intro_room = Encounter()
+        intro_room = Encounter("intro room")
+        self.add_choice(intro_room)
         self.clear()
         intro_room.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
         intro_room.encounter_text.append(False)
@@ -168,7 +177,7 @@ class Game:
         check_supplies.print_encounter_text()
         input(colored("End of Chapter One. Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        self.choice("nothing yet", self.option_1, self.option_2)
+
 
     def check_space(self):
         check_space = Encounter()
@@ -177,7 +186,7 @@ class Game:
         check_space.print_encounter_text()
         input(colored("End of Chapter One. Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
-        self.choice("nothing yet", self.option_1, self.option_2)
+
 
 if __name__ == "__main__":
 
@@ -194,4 +203,5 @@ if __name__ == "__main__":
 
     # time to play
     game = Game()
+    game.mainloop()
     game.play()
