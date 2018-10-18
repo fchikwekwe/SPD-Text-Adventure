@@ -39,9 +39,12 @@ class Main(tk.Tk):
             text_index += 1
 
     def add_text(self):
+        
 
     def remove_text(self):
-
+        text = event.widget
+        self.encounter_text.remove(event.widget)
+        event.widget.destroy()
 
         if __name__ == '__main__':
             game = Main()
