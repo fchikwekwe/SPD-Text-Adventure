@@ -10,7 +10,7 @@ class Main(tk.Tk):
         super().__init__()
         # list for story texts
         if not encounter_text:
-            self.encounter_text = ["test"]
+            self.encounter_text = []
         else:
             self.encounter_text = encounter_text
         # list for instructions / backstory
@@ -42,16 +42,12 @@ class Main(tk.Tk):
         self.story_frame.pack(side=tk.BOTTOM, fill=tk.X)
         self.text_create.focus_set()
 
-        instructions = tk.Label(self, text="This is where the instructions will show.", bg="lightgrey", fg="black", pady=10)
+        instructions = tk.Label(self, text="Press enter to show more text. \nWhen choices appear, press 'a' or 'b' and then enter.", bg="lightgrey", fg="black", pady=10)
 
         self.instructions.append(instructions)
 
         # instructions are listed at the bottom of the screen
         for text in self.instructions:
-            text.pack(side=tk.BOTTOM, fill=tk.X)
-
-        for text in self.encounter_text:
-            text = tk.Label(self, text=text, fg="black")
             text.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.bind("<Return>", self.add_text)
@@ -64,10 +60,14 @@ class Main(tk.Tk):
 
     def add_text(self, event=None):
         # adds text to encounter text list so that it renders on screen
-        self.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
-        print(self.encounter_text)
-        self.encounter_text.append("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.")
-        print(self.encounter_text)
+        print(len(self.encounter_text))
+        self.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window,\nbut even behind your closed eyelids, \nyou know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
+        print(len(self.encounter_text))
+        self.encounter_text.append("a) You could walk over to him and ask what he's planning, \nor b) allow the stillness to persist for a few more moments.")
+        print(len(self.encounter_text))
+        for text in self.encounter_text:
+            text = tk.Label(self, text=text, fg="black", pady=10)
+            text.pack(side=tk.TOP, fill=tk.X)
 
     def remove_text(self):
         # removes last text from encounter_text list
