@@ -8,6 +8,7 @@ class Encounter:
     def __init__(self, name, encounter_text=None):
         # holds texts and input to display
         self.name = name
+        self.encounter_text = []
 
     def next(self):
         input(colored("Press enter to continue...", "cyan", attrs=["bold"]))

@@ -57,10 +57,6 @@ class Game(tk.Tk):
         # start the game
         self.intro_room()
 
-        # This is how I might implement encounter_room function if I end up coming back to it
-        # intro_room = Encounter()
-        # self.encounter_room(intro_room, "It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.", "a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", bother_omar, self.leave_omar_alone)
-
     def choice(self, choice_input, option_1, option_2):
         """ this method will hold code that tracks when the player has made a choice """
         choosing = True
@@ -75,18 +71,6 @@ class Game(tk.Tk):
                 choosing = False
             else:
                 pass
-
-    # trying to see if there is a better way to organize this code than to have seperate functions for each encounter
-    # problem with this method is that I would have to call two functions within another function call
-    # unfortunately, this does not simplify things; might come back to it if I think of something
-
-    # def encounter_room(self, encounter_name, encounter_story, choice_text, choice_one, choice_two):
-    #     encounter_name = Encounter()
-    #     encounter_name.encounter_text.append(encounter_story)
-    #     encounter_name.encounter_text.append(False)
-    #     encounter_name.print_encounter_text()
-    #     self.clear()
-    #     self.choice(choice_text, choice_one, choice_two)
 
     def intro_room(self):
         # first room of the game; waking up
@@ -183,17 +167,6 @@ class Game(tk.Tk):
 
 
 if __name__ == "__main__":
-
-    # instatiate objects
-    # intro_room = Intro_Room()
-    # bother_omar = Bother_Omar()
-    # leave_omar_alone = Leave_Omar_Alone()
-    # joke_with_omar = Joke_With_Omar()
-    # scold_omar = Scold_Omar()
-    # let_them_knock = Let_Them_Knock()
-    # check_whos_there = Check_Whos_There()
-    # check_supplies = Check_Supplies()
-    # check_space = Check_Space()
 
     # time to play
     game = Game()
