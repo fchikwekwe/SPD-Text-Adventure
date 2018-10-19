@@ -1,6 +1,6 @@
 
 from encounter import Encounter
-from game import Game
+# from game import Game
 import tkinter as tk
 
 """ this class deals with the GUI part of this application"""
@@ -10,7 +10,7 @@ class Main(tk.Tk):
         super().__init__()
         # list for story texts
         if not encounter_text:
-            self.encounter_text = []
+            self.encounter_text = ["test"]
         else:
             self.encounter_text = encounter_text
         # list for instructions / backstory
@@ -43,19 +43,16 @@ class Main(tk.Tk):
         self.text_create.focus_set()
 
         instructions = tk.Label(self, text="This is where the instructions will show.", bg="lightgrey", fg="black", pady=10)
-        instructions.bind("<Button-1>", self.remove_text)
 
         self.instructions.append(instructions)
 
-        self.encounter_text 
-
-        self.bind("<Return>", self.next)
         # instructions are listed at the bottom of the screen
         for text in self.instructions:
             text.pack(side=tk.BOTTOM, fill=tk.X)
 
         for text in self.encounter_text:
-            text.pack(side=tk.TOP, fill=tk.X)
+            text = tk.Label(self, text=text, fg="black")
+            text.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.bind("<Return>", self.add_text)
 
@@ -66,9 +63,11 @@ class Main(tk.Tk):
             text_index += 1
 
     def add_text(self, event=None):
-        # adds text to encounter text list so that it renders
-        for text in Encounter.encounter_text:
-            self.encounter_text.append(text)
+        # adds text to encounter text list so that it renders on screen
+        self.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
+        print(self.encounter_text)
+        self.encounter_text.append("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.")
+        print(self.encounter_text)
 
     def remove_text(self):
         # removes last text from encounter_text list
