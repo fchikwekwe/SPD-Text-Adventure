@@ -1,6 +1,5 @@
 
 from termcolor import colored
-from os import system, name
 
 """class for creating each encounter within the game"""
 

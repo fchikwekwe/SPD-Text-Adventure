@@ -1,4 +1,4 @@
-import time
+# import time
 from termcolor import colored
 from os import system, name
 import tkinter as tk
@@ -6,9 +6,8 @@ import tkinter as tk
 from main import Main
 from character import Character
 from encounter import Encounter
-# from item import Item
 
-"""main class"""
+"""game class"""
 
 class Game(tk.Tk):
     def __init__(self, choices=None):

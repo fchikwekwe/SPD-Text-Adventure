@@ -1,7 +1,7 @@
 
 from game import Game
 
-"""choice attributes"""
+"""Class not currently in use; future feature to be implmented later; choice attributes"""
 
 class Choice:
     def __init__(self, name, choice_description):
