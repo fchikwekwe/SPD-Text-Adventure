@@ -25,7 +25,7 @@ class Game(tk.Tk):
         print("This is where instructions for the user will show.")
 
     # I feel that simple user input is superior to using time lapse because it gives the user more control
-    # I may come back to this later if I want to give the game control in some areas
+    # I may come back to time lapse later if I want to give the game control in some areas
 
     # def time_lapse(self):
     #     # let the reader see the story for a bit before moving on
@@ -137,6 +137,7 @@ class Game(tk.Tk):
         self.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", self.check_supplies, self.check_space)
 
     def check_whos_there(self):
+        # you go to the door
         check_whos_there = Encounter()
         self.clear()
         check_whos_there.encounter_text.append("\nYou walk over to the door and ask in a calm voice, 'who is it?'\nAlia is standing in front on the couch now, arms crossed in her defiant, eleven-year-old way. \nA voice from the other side of the door responds, 'Its your lifeline. I have good news for you, if you'll let me in.'\n\nYou would recognize Than's voice anywhere. Omar is a few feet behind you as you take steps toward the door. He signals for you to use the peephole to confirm Than's identity.\nYou lean towards the closed door and look through the small bit of glass. Outside you see a short, stocky man with dark hair and ruddy cheeks. It's your boss at the transportation agency.\nYour hand reaches for the deadbolt lock and you open the door slowly, allowing Than to come in.\n\nNow, even Raya is sitting up looking at the man who has come in to your house.\n")
@@ -148,6 +149,7 @@ class Game(tk.Tk):
         self.choice("'Than.' you sigh, 'Thank you for this.' a) ask about the supplies b) ask about the amount of space that there is in the vehicle", self.check_supplies, self.check_space)
 
     def check_supplies(self):
+        # you ask first about the supplies that you must carry
         check_supplies = Encounter()
         self.clear()
         check_supplies.encounter_text.append("\n'What are the supplies that I'm taking?' you say jumping right into the job details.\n'You were always a hard worker,' Than says smirking. He explains that you have a few gurneys and a lot of surgical supples that have to be taken.\n'Overall,' he continues, 'It should leave space enough for seven people if you really are pushing it. But definitely enough space for the people that I see here.'\nThan comes close to you and gives you a hug. A tear comes to his eye as he explains that this might be the last time that you see one another again.")
@@ -158,6 +160,7 @@ class Game(tk.Tk):
 
 
     def check_space(self):
+        # you ask first about the amount of space for people
         check_space = Encounter()
         self.clear()
         check_space.encounter_text.append("\n'How many of us can fit in the vehicle?' you ask, 'I have three siblings.' \nThan waives your question away. 'There are seven seats in the van. Even with the supplies that are there, you'll be fine on space for your four. In fact, you can take some others as well if you'd like.' \nThan comes close to you and gives you a hug. A tear comes to his eye as he explains that this might be the last time that you see one another again.\n\nIf he can make it out alive, the company that owns the transportation agency he was managing has paid for a ticket out of the country for him.\nThis is his way of paying it forward to you. As he leaves your small home, you can tell that the air raid from last night seems to be subsiding. The crack of dawn marks the new day for you.\n\n'Seven seats...' you think 'Maybe there are others who need a way out of here as well.\n'")
@@ -170,5 +173,4 @@ if __name__ == "__main__":
 
     # time to play
     game = Game()
-    # game.mainloop()
     game.play()
