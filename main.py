@@ -51,6 +51,9 @@ class Main(tk.Tk):
             text.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.bind("<Return>", self.add_text)
+        self.bind_all("<MouseWheel>", self.mouse_scroll)
+        self.bind_all("<Button-4>", self.mouse_scroll)
+        self.bind_all("<Button-5>", self.mouse_scroll)
 
     def next(self):
         # iterates over encounter text list
@@ -60,25 +63,34 @@ class Main(tk.Tk):
 
     def add_text(self, event=None):
         # adds text to encounter text list so that it renders on screen
-        print(len(self.encounter_text))
-        self.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window,\nbut even behind your closed eyelids, \nyou know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
-        print(len(self.encounter_text))
-        self.encounter_text.append("a) You could walk over to him and ask what he's planning, \nor b) allow the stillness to persist for a few more moments.")
-        print(len(self.encounter_text))
+        text_index = 0
         for text in self.encounter_text:
             text = tk.Label(self, text=text, fg="black", pady=10)
-            text.pack(side=tk.TOP, fill=tk.X)
+            text[text_index].pack(side=tk.TOP, fill=tk.X)
+            text_index += 1
+            
+            if text_index == 0:
+                self.add_intro_text()
+            elif text_index == 1:
+                self.test_text()
 
-    def remove_text(self):
-        # removes last text from encounter_text list
-        text = event.widget
-        self.encounter_text.remove(event.widget)
-        event.widget.destroy()
 
-    def task_width(self, event):
-        # regulates text width on screen
-        canvas_width = event.width
-        self.game_canvas.itemconfig(self.canvas_frame, width = canvas_width)
+
+    def add_intro_text(self, event=None):
+        # adds intro text
+        self.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window,\nbut even behind your closed eyelids, \nyou know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
+        self.encounter_text.append("a) You could walk over to him and ask what he's planning, \nor b) allow the stillness to persist for a few more moments.")
+
+    def test_text(self, event=None):
+        # adds intro text
+        self.encounter_text.append("test1")
+        self.encounter_text.append("just a test")
+
+    # def remove_text(self):
+    #     # removes last text from encounter_text list
+    #     text = event.widget
+    #     self.encounter_text.remove(event.widget)
+    #     event.widget.destroy()
 
     def mouse_scroll(self, event):
         # allows user to scroll with mouse if text is too long
@@ -94,4 +106,9 @@ class Main(tk.Tk):
 
 if __name__ == '__main__':
     game = Main()
-    game.mainloop()
+    while True:
+        try:
+            game.mainloop()
+            break
+        except UnicodeDecodeError:
+            pass
