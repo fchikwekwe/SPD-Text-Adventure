@@ -1,3 +1,4 @@
+import time
 from termcolor import colored
 from os import system, name
 import tkinter as tk
@@ -21,17 +22,27 @@ class Game(tk.Tk):
 
     def intro(self):
         """this is where the game instructions will show and backstory"""
-        print("This is where the backstory will show.")
-        print("This is where instructions for the user will show.")
+        menu = True
+        while menu:
+            print("-----------------------\n")
+            menu_choice = input("Welcome to Seven Seats. \n----------------------- \n\nTo read your own backstory, enter 's'. \nTo read about your brother, Omar, enter 'o'. \nTo read about your sisters Raya and Alia, enter 'r'. \n-----------------------\n-----------------------\nTo begin the main story enter 'a'.\n")
+            self.clear()
+            if menu_choice.lower() == 's':
+                input("Main character:\n-----------------------\n\nYou are the oldest of four children and in your mid to late 20s. Living in an unnamed war-torn city. \n There have been perpetual bombings in this area for over a year, since the war began. \nYour parents were killed in the corner store that they owned a few months ago during a heavy afternoon of bombings. \nSince their death, you've taken responsibility for your siblings.\n\nYou have worked for a local transportation agency for the past two years, but now they are shutting down in this city now due to the bombings.\nOne day, your boss arrives with news that changes your fortunes...\n-----------------------\n\n" + colored("Press enter to continue...", "cyan", attrs=["bold"]))
+            elif menu_choice.lower() == 'o':
+                input("Omar:\n-----------------------\n\nOmar, is your 22 year-old brother. He is quiet, brave and impulsive. \nHe always puts others before himself, even at his own peril. \nOften, he leaves the house for supplies, even on days when it isn't safe to go out. \nYou can tell he feels trapped by the war.\n\n" + colored("Press enter to continue...", "cyan", attrs=["bold"]))
+            elif menu_choice.lower() == 'r':
+                input("Raya and Alia:\n-----------------------\n\nYour younger sisters are Alia and Raya. Alia is eleven-years-old. She is bold, passionate and opinionated. \nAfter your parents died, she has become more and more outspoken about things she disagrees with, even in front of people she shouldn't speak back to. You worry about her temper, but understand the stifling nature of your current circumstances. \n\nYour sister Raya is 8 years-old. She is patient, optimistic and curious. She would rather go back to the days of studying bugs as they crawl across the pavement. Now, she studies chips of paint on the wall and traces her name in the dirt floor.\n\n" + colored("Press enter to continue...", "cyan", attrs=["bold"]))
+            elif menu_choice.lower() == 'a':
+                input("Press enter to move through the story. When prompted, choices are selected with either 'a' or 'b'.\n\n" + colored("Press enter to continue...", "cyan", attrs=["bold"]))
+                menu = False
 
     # I feel that simple user input is superior to using time lapse because it gives the user more control
-    # I may come back to time lapse later if I want to give the game control in some areas
-
-    # def time_lapse(self):
+    # I may come back to time lapse later if I want to give the game control in some areaelf):
     #     # let the reader see the story for a bit before moving on
     #     # may have to use root.after() instead when implementing tKinter
     #     try:
-    #         time.sleep(10)
+    #         time.sleep(3)
     #     except KeyboardInterrupt:
     #         # allow player to type ctrl + C to skip reading time
     #         # may want to try and change this later so it works with any keyboard input
@@ -52,7 +63,6 @@ class Game(tk.Tk):
         self.clear()
         # intro text shows; instructions show
         self.intro()
-        input(colored("Press enter to continue...", "cyan", attrs=["bold"]))
         self.clear()
         # start the game
         self.intro_room()
@@ -62,7 +72,7 @@ class Game(tk.Tk):
         choosing = True
         while choosing:
             print("-------------- \n ")
-            choice = input(choice_input + "\nPlease Type 'a' or 'b': ")
+            choice = input(choice_input + "\nPlease type 'a' or 'b' and then press enter: ")
             if choice.lower() == 'a':
                 option_1()
                 choosing = False
@@ -72,17 +82,17 @@ class Game(tk.Tk):
             else:
                 pass
 
-    def test(self):
-        # first room of the game; waking up
-        test = Main()
-        self.add_choice("test")
-        self.clear()
-        test.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
-        print(test.encounter_text)
-        # intro_room.encounter_text.append(False)
-        # intro_room.print_encounter_text()
-        # self.clear()
-        # self.choice("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", self.bother_omar, self.leave_omar_alone)
+    # def test(self):
+    #     # first room of the game; waking up
+    #     test = Main()
+    #     self.add_choice("test")
+    #     self.clear()
+    #     test.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window, but even behind your closed eyelids, you know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
+    #     print(test.encounter_text)
+    #     # intro_room.encounter_text.append(False)
+    #     # intro_room.print_encounter_text()
+    #     # self.clear()
+    #     # self.choice("a) You could walk over to him and ask what he's planning, or b) allow the stillness to persist for a few more moments.", self.bother_omar, self.leave_omar_alone)
 
     def intro_room(self):
         # first room of the game; waking up
@@ -168,7 +178,7 @@ class Game(tk.Tk):
         check_supplies.encounter_text.append("\n\nIf he can make it out alive, the company that owns the transportation agency he was managing has paid for a ticket out of the country for him.\nThis is his way of paying it forward to you. As he leaves your small home, you can tell that the air raid from last night seems to be subsiding. The crack of dawn marks the new day for you.\n\n'Seven seats...' you think 'Maybe there are others who need a way out of here as well.\n'")
         check_supplies.print_encounter_text()
         input(colored("End of Chapter One. Thanks for playing.", "cyan", attrs=["bold"]))
-        sys.exit()
+        exit()
 
 
     def check_space(self):

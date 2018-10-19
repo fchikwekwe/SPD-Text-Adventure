@@ -63,28 +63,18 @@ class Main(tk.Tk):
 
     def add_text(self, event=None):
         # adds text to encounter text list so that it renders on screen
-        text_index = 0
         for text in self.encounter_text:
             text = tk.Label(self, text=text, fg="black", pady=10)
-            text[text_index].pack(side=tk.TOP, fill=tk.X)
-            text_index += 1
-            
-            if text_index == 0:
-                self.add_intro_text()
-            elif text_index == 1:
-                self.test_text()
+            text.pack(side=tk.TOP, fill=tk.X)
 
+        if True:
+            self.add_intro_text()
 
 
     def add_intro_text(self, event=None):
         # adds intro text
         self.encounter_text.append("It's early. \n \nYou can tell that its morning from the sound of birds outside your window,\nbut even behind your closed eyelids, \nyou know the sun hasn't yet peaked from beyond the horizon. \n \nYou let your eyelids part and turn your head slightly towards the door. \nYour brother, Omar is sitting across the room, perched against the window.\nHis face is dark and brooding this morning.")
         self.encounter_text.append("a) You could walk over to him and ask what he's planning, \nor b) allow the stillness to persist for a few more moments.")
-
-    def test_text(self, event=None):
-        # adds intro text
-        self.encounter_text.append("test1")
-        self.encounter_text.append("just a test")
 
     # def remove_text(self):
     #     # removes last text from encounter_text list
